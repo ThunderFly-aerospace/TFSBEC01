@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 48,
+    "active_layer": 44,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -69,7 +69,7 @@
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "TFSBEC01A.kicad_prl",
+    "filename": "TFSBEC01.kicad_prl",
     "version": 3
   },
   "project": {
