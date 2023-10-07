@@ -2,6 +2,10 @@
 
 There are many devices in unmanned vehicles that require a quality power supply, and it is very useful to know the actual and real consumption of these components. Our TFSBEC module is designed to provide power to servos, autopilot (flight controller), and other drone accessories. In case the user needs more current or two independent sources on his drone, for example, a separate source for avionics and for power-consuming elements (actuators), it is possible to chain these modules.
 
+![TFSBEC01 top ](doc/img/TFSBEC01A_top.png)
+![TFSBEC01 bottom](doc/img/TFSBEC01A_bot.png)
+
+
 ## Parameters
 
 | Parameter | Value | Note |
