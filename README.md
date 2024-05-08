@@ -18,8 +18,8 @@ There are many devices in unmanned vehicles that require a quality power supply,
 | Current measurement range | 0 - 50 A | |
 | Volts per Amper | 39.6 mV/A | From component datasheet |
 | Current measurement Volts offset | 330 mV | From component datasheet |
-| Voltage measurement range | | Depend on target ADC max input |
-| Voltage measurement divider | | From schematic |
+| Voltage measurement range | 0 - 40 V | Depend on target ADC max input ( max. 3.95 V ) |
+| Voltage measurement divider | 10.13 | From schematic |
 | Size | approx. 46 x 30 mm| PCB only |
 | Weight | | PCB only |
 | Compatibility | Pixhawk-based drones | As a quality source, it can be operated on any drone |
@@ -28,6 +28,6 @@ There are many devices in unmanned vehicles that require a quality power supply,
 From datasheet values:
   * BAT1_A_PER_V = 25.2525
   * BAT_V_OFFS_CURR = 0.33
-  * BAT1_V_DIV = 10.30 
+  * BAT1_V_DIV = 10.13
     
-QGC build-in measurement of BAT1_A_PER_V can be used for better estimation of paramters (it shows actual PX4 estimation of current). ADC raw voltage is recomputed to PX4 estimation of current by formua: I_est = BAT1_A_PER_V * ( raw_voltage - BAT_V_OFFS_CURR ). 
+QGC build-in measurement of can be used for better estimation of paramters. Current ADC raw voltage  is recomputed to PX4 estimation of current by formua: I_est = BAT1_A_PER_V * ( raw_voltage - BAT_V_OFFS_CURR ). For computation of BAT_V_OFFS_CURR multiple current measuremet is needed.
