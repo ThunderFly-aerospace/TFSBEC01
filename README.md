@@ -34,7 +34,6 @@ These constants are nominal values taken from the datasheet:
     
 QGC build-in measurement can be used to estimate parameters more precisely for the specific piece. The PX4 estimation of current is calculated from the ADC raw voltage by the following formula: 
 
-![I_est equation](https://latex.codecogs.com/png.image?\dpi{110}I_{\text{est}}=\text{BAT1\_A\_PER\_V}\cdot(\text{raw\_voltage}-\text{BAT\_V\_OFFS\_CURR}))
-
+![I estimate equation](https://latex.codecogs.com/png.image?\dpi{110}I_{est}=\text{BAT1\_A\_PER\_V}\cdot(ADC_{val}-\text{BAT\_V\_OFFS\_CURR}))
 
 For the computation of BAT_V_OFFS_CURR, multiple current measurements are usually needed, because there are significant peaks due to powering of electronics with a low current consumption.  
