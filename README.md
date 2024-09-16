@@ -1,6 +1,6 @@
 # TFSBEC01 - High efficient power supply with measuring circuit for UAV
 
-There are many devices in unmanned vehicles that require a quality power supply, and it is very useful to know the actual and real consumption of these components. Our TFSBEC module is designed to provide power to servos, autopilot (flight controller), and other drone accessories. In case the user needs more current or two independent sources on his drone, for example, a separate source for avionics and for power-consuming elements (actuators), it is possible to chain these modules.
+Many devices in unmanned vehicles require a quality power supply, and it is very useful to know the actual and real consumption of these components. Our TFSBEC module is designed to provide power to servos, autopilot (flight controller), and other medium-power drone accessories. In case the user needs more current or two independent sources on his drone, for example, a separate source for avionics and power-consuming elements (actuators), it is possible to chain these modules.
 
 ![TFSBEC01 top ](doc/img/TFSBEC01A_top.png)
 ![TFSBEC01 bottom](doc/img/TFSBEC01A_bot.png)
@@ -25,9 +25,16 @@ There are many devices in unmanned vehicles that require a quality power supply,
 | Compatibility | Pixhawk-based drones | As a quality source, it can be operated on any drone |
 
 ## PX4 Params
-From datasheet values:
+
+These constants are nominal values taken from the datasheet:
+
   * BAT1_A_PER_V = 25.2525
   * BAT_V_OFFS_CURR = 0.33
   * BAT1_V_DIV = 10.13
     
-QGC build-in measurement of can be used for better estimation of paramters. Current ADC raw voltage  is recomputed to PX4 estimation of current by formua: I_est = BAT1_A_PER_V * ( raw_voltage - BAT_V_OFFS_CURR ). For computation of BAT_V_OFFS_CURR multiple current measuremet is needed.
+QGC build-in measurement can be used to estimate parameters more precisely for the specific piece. The PX4 estimation of current is calculated from the ADC raw voltage by the following formula: 
+
+![I_est equation](https://latex.codecogs.com/png.image?\dpi{110}I_{\text{est}}=\text{BAT1\_A\_PER\_V}\cdot(\text{raw\_voltage}-\text{BAT\_V\_OFFS\_CURR}))
+
+
+For the computation of BAT_V_OFFS_CURR, multiple current measurements are usually needed, because there are significant peaks due to powering of electronics with a low current consumption.  
