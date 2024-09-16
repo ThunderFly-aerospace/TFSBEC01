@@ -28,12 +28,13 @@ Many devices in unmanned vehicles require a quality power supply, and it is very
 
 These constants are nominal values taken from the datasheet:
 
-  * BAT1_A_PER_V = 25.2525
-  * BAT_V_OFFS_CURR = 0.33
+  * A = BAT1_A_PER_V = 25.2525
+  * B = BAT_V_OFFS_CURR = 0.33
   * BAT1_V_DIV = 10.13
     
 QGC build-in measurement can be used to estimate parameters more precisely for the specific piece. The PX4 estimation of current is calculated from the ADC raw voltage by the following formula: 
 
-![I estimate equation](https://latex.codecogs.com/png.image?\dpi{110}I_{est}=\text{BAT1\_A\_PER\_V}\cdot(ADC_{val}-\text{BAT\_V\_OFFS\_CURR}))
+![I estimate equation](https://latex.codecogs.com/png.image?\dpi{110}I_{est}=A\cdot(ADC_{val}-B))
+
 
 For the computation of BAT_V_OFFS_CURR, multiple current measurements are usually needed, because there are significant peaks due to powering of electronics with a low current consumption.  
